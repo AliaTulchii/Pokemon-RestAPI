@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Pokemon-RestAPI/static/css/main.7acaea2f.css",
+    "main.js": "/Pokemon-RestAPI/static/js/main.07d3183d.js",
+    "index.html": "/Pokemon-RestAPI/index.html",
+    "main.7acaea2f.css.map": "/Pokemon-RestAPI/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/Pokemon-RestAPI/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
