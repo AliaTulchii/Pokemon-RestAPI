@@ -7,4 +7,16 @@
     margin-top: 32px;
     margin-bottom: 32px;
     padding: 32px;
+    padding-top: 16px;
+}
+
+.App__header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.App__logo{
+    margin-left: auto;
 }

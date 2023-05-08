@@ -1,9 +1,10 @@
 import { Component } from 'react';
-// import pokemonLoading from '../images/pokemon-loading.png'
+import { ReactComponent as PokemonTitle } from '../images/pokemonTitle.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PokemonForm from './PokemonForm';
 import css from './App.module.css'
+import PokemonInfo from './PokemonInfo';
 
 export default class App extends Component {
   state = {
@@ -19,7 +20,12 @@ export default class App extends Component {
   render() {
     return (
       <div className={css.App__box}>
+        <div className={css.App__header}>
         <PokemonForm onSubmit={this.handleFormSubmit} />
+          <PokemonTitle width={250} height={200} className={css.App__logo} />
+        </div>
+        <PokemonInfo pokemonName={this.state.pokemonName} />
+        
         <ToastContainer
 position="top-right"
 autoClose={3000}

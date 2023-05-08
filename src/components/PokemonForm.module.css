@@ -1,0 +1,23 @@
+.Form{
+    display: flex;
+    border: 4px solid rgb(16, 119, 244);   
+    background-color: rgba(244, 244, 239, 0.715);
+}
+
+.Form__input{
+    height: 30px;
+   border: none;
+   background-color: transparent;
+}
+
+.Form__input::placeholder{
+    background-color: transparent;
+    color: rgb(16, 119, 244);
+}
+
+.Form__buttn{
+    padding-bottom: 0;
+    border: none;
+    background-color: transparent;
+    cursor:pointer;
+}

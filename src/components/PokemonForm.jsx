@@ -2,11 +2,12 @@ import { Component } from 'react';
 import { toast } from 'react-toastify';
 import { ReactComponent as Pokeball } from '../images/pokeballsvg.svg';
 import 'react-toastify/dist/ReactToastify.css';
+import css from './PokemonForm.module.css'
 
 
 
 
-const styles = { form: { marginBottom: 20 } };
+
 
 export default class PokemonForm extends Component {
     state = {
@@ -42,17 +43,22 @@ export default class PokemonForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} style={styles.form}>
+            <form onSubmit={this.handleSubmit} className={css.Form}>
                 <input
                     type="text"
                     name="pokemonName"
                     value={this.state.pokemonName}
                     onChange={this.handleNameChange}
+                    className={css.Form__input}
+                    placeholder="Enter pokemon's name"
                 />
 
-                <button type="submit">
-                    <Pokeball width={10} height={10} />
-                    Search
+                <button
+                    type="submit"
+                    className={css.Form__buttn}
+                >
+                    <Pokeball width={20} height={20} />
+                    
                 </button>
             </form>
         )
