@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Pokemon-RestAPI/static/css/main.37198fea.css",
-    "main.js": "/Pokemon-RestAPI/static/js/main.2060c214.js",
+    "main.css": "/Pokemon-RestAPI/static/css/main.c192ae35.css",
+    "main.js": "/Pokemon-RestAPI/static/js/main.eaf5f2ba.js",
     "static/media/pokeballsvg.svg": "/Pokemon-RestAPI/static/media/pokeballsvg.6130ac2be72d743dbd793557f12c9454.svg",
     "index.html": "/Pokemon-RestAPI/index.html",
-    "main.37198fea.css.map": "/Pokemon-RestAPI/static/css/main.37198fea.css.map",
-    "main.2060c214.js.map": "/Pokemon-RestAPI/static/js/main.2060c214.js.map"
+    "main.c192ae35.css.map": "/Pokemon-RestAPI/static/css/main.c192ae35.css.map",
+    "main.eaf5f2ba.js.map": "/Pokemon-RestAPI/static/js/main.eaf5f2ba.js.map"
   },
   "entrypoints": [
-    "static/css/main.37198fea.css",
-    "static/js/main.2060c214.js"
+    "static/css/main.c192ae35.css",
+    "static/js/main.eaf5f2ba.js"
   ]
 }
