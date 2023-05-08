@@ -1,0 +1,10 @@
+.App__box{
+    width: 1000px;
+    height: 650px;
+    background-color: rgba(248,252,69,1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 32px;
+}
