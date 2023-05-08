@@ -24,8 +24,6 @@ export default class App extends Component {
         <PokemonForm onSubmit={this.handleFormSubmit} />
           <PokemonTitle width={250} height={200} className={css.App__logo} />
         </div>
-        <PokemonInfo pokemonName={this.state.pokemonName} />
-        
         <ToastContainer
 position="top-right"
 autoClose={3000}
@@ -37,7 +35,8 @@ pauseOnFocusLoss
 draggable
 pauseOnHover
 theme="light"
-/>
+        />
+        <PokemonInfo pokemonName={this.state.pokemonName} />
       </div>
     )
   }
