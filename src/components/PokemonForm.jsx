@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { ReactComponent as Pokeball } from '../images/pokeballsvg.svg';
 
 
