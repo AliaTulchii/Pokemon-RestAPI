@@ -1,6 +1,7 @@
 import { Component } from 'react';
 // import pokemonLoading from '../images/pokemon-loading.png'
-// import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PokemonForm from './PokemonForm';
 import css from './App.module.css'
 
@@ -19,6 +20,18 @@ export default class App extends Component {
     return (
       <div className={css.App__box}>
         <PokemonForm onSubmit={this.handleFormSubmit} />
+        <ToastContainer
+position="top-right"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
       </div>
     )
   }

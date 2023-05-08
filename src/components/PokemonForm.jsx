@@ -1,6 +1,7 @@
 import { Component } from 'react';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { ReactComponent as Pokeball } from '../images/pokeballsvg.svg';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -22,8 +23,16 @@ export default class PokemonForm extends Component {
 
         
         if (this.state.pokemonName.trim() === '') {
-            alert('Write pokemon name');
-
+            toast.error('Enter pokemons name!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
             return;
         }
 
