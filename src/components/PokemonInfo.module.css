@@ -1,4 +1,4 @@
-.Info__box, .Info__loadingBox{
+.Info__box, .Info__loadingBox, .Info__errorBox{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,4 +36,9 @@
     font-size: 24px;
     text-transform:uppercase;
     color: rgb(16, 119, 244);
+}
+
+.Info__error{
+    color: rgb(204, 51, 61);
+    font-size: 32px;
 }

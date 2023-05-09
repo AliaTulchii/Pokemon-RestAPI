@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import loadingPokemon from '../images/loadingPokemon.png';
 import pokemonLoading from '../images/pokemonLoading.png';
-import css from './PokemonInfo.module.css'
+import notFound from '../images/notFound.png';
+import css from './PokemonInfo.module.css';
 // import PokemonDataView from './PokemonDataView';
 // import PokemonErrorView from './PokemonErrorView';
 // import PokemonPendingView from './PokemonPendingView';
@@ -9,7 +10,9 @@ import css from './PokemonInfo.module.css'
 export default class PokemonInfo extends Component {
     state = {
         pokemon: null,
-        loading: false,
+        // loading: false,
+        error: null,
+        status: 'idle',
     }
 
 
@@ -18,13 +21,22 @@ export default class PokemonInfo extends Component {
         if (prevProps.pokemonName !== this.props.pokemonName) {
             console.log('Pokemons name changed');
             
-            this.setState({ loading: true });
+            // this.setState({ loading: true, pokemon: null });
+            this.setState({ status:'pending'});
 
             setTimeout(() => {
                 fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`)
-                .then(res => res.json())
-                .then(pokemon => this.setState({ pokemon }))
-                .finally(() => this.setState({loading: false}));
+                    .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                        }
+                        
+                        return Promise.reject(
+                            new Error(`Oops we didn't find pokemon ${this.props.pokemonName}`));
+                    })
+                    .then(pokemon => this.setState({ pokemon, status:'resolved' }))
+                    .catch(error => this.setState({ error, status: 'rejected' }))
+                // .finally(() => this.setState({loading: false}));
             },1000)
             
            
@@ -35,25 +47,56 @@ export default class PokemonInfo extends Component {
 
     render() {
         
-        return <div>
-            <h1 className={css.Info__title}>Pokemon Info</h1>
-            <div>
-            {this.state.loading && <div className={css.Info__loadingBox}> <img src={pokemonLoading} alt="pokemon Loading" width={300} className={css.Info__loadingImg} /> <h2>Wait a second we search your pokemon...</h2></div>}
-            {!this.props.pokemonName && <div className={css.Info__box}><img src={loadingPokemon} alt="not found" width={300} /> <h2 className={css.Info__text}>Let's see who is inside</h2> </div>}
-                {this.state.pokemon && (
-                    <div className={css.Info__card}>
-                        <img
-                            src={this.state.pokemon.sprites.other['official-artwork'].front_default}
-                            alt=""
-                            width={300}
-                            className={css.Info__pokemonImg}
-                        />
-                        <div><h3 className={css.Info_name}>{this.state.pokemon.name}</h3></div>
-                        
-                        
-                    </div>)}
-            </div>
-           
+        // state machine
+
+        if (this.state.status === 'idle') {
+            return <div className={css.Info__box}><img src={loadingPokemon} alt="not found" width={300} /> <h2 className={css.Info__text}>Let's see who is inside</h2> </div>
+        }
+
+        if (this.state.status === 'pending') {
+            return <div className={css.Info__loadingBox}> <img src={pokemonLoading} alt="pokemon Loading" width={300} className={css.Info__loadingImg} /> <h2>Wait a second we search your pokemon...</h2></div>
+        }
+
+        if (this.state.status === 'rejected') {
+            return <div className={css.Info__errorBox}><img src={notFound} alt="not found" width={300} /> <h2 className={css.Info__error}>{this.state.error.message}</h2></div>
+        }
+
+        if (this.state.status === 'resolved') {
+            return <div className={css.Info__card}>
+            <img
+                src={this.state.pokemon.sprites.other['official-artwork'].front_default}
+                alt={this.state.pokemon.name}
+                width={300}
+                className={css.Info__pokemonImg}
+            />
+            <div><h3 className={css.Info_name}>{this.state.pokemon.name}</h3></div>
+            
+            
         </div>
+        }
+
+
+
+        // return <div>
+        //     <h1 className={css.Info__title}>Pokemon Info</h1>
+        //     <div>
+        //     {this.state.error && <div className={css.Info__errorBox}><img src={notFound} alt="not found" width={300} /> <h2 className={css.Info__error}>Oops we didn't find pokemon {this.props.pokemonName}</h2></div>}
+        //     {this.state.loading && !this.state.pokemon  && <div className={css.Info__loadingBox}> <img src={pokemonLoading} alt="pokemon Loading" width={300} className={css.Info__loadingImg} /> <h2>Wait a second we search your pokemon...</h2></div>}
+        //     {!this.props.pokemonName && <div className={css.Info__box}><img src={loadingPokemon} alt="not found" width={300} /> <h2 className={css.Info__text}>Let's see who is inside</h2> </div>}
+        //     {this.state.pokemon &&  (
+        //             <div className={css.Info__card}>
+        //                 <img
+        //                     src={this.state.pokemon.sprites.other['official-artwork'].front_default}
+        //                     alt={this.state.pokemon.name}
+        //                     width={300}
+        //                     className={css.Info__pokemonImg}
+        //                 />
+        //                 <div><h3 className={css.Info_name}>{this.state.pokemon.name}</h3></div>
+                        
+                        
+        //             </div>)}
+        //     </div>
+           
+        // </div>
     }
 }
