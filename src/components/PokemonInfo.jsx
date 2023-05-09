@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import loadingPokemon from '../images/loadingPokemon.png';
 import pokemonLoading from '../images/pokemonLoading.png';
-import notFound from '../images/notFound.png';
+// import notFound from '../images/notFound.png';
 import css from './PokemonInfo.module.css';
-// import PokemonDataView from './PokemonDataView';
-// import PokemonErrorView from './PokemonErrorView';
+import PokemonDataView from './PokemonDataView';
+import PokemonErrorView from './PokemonErrorView';
 // import PokemonPendingView from './PokemonPendingView';
 
 export default class PokemonInfo extends Component {
@@ -58,21 +58,11 @@ export default class PokemonInfo extends Component {
         }
 
         if (this.state.status === 'rejected') {
-            return <div className={css.Info__errorBox}><img src={notFound} alt="not found" width={300} /> <h2 className={css.Info__error}>{this.state.error.message}</h2></div>
+            return <PokemonErrorView message={this.state.error.message}/>
         }
 
         if (this.state.status === 'resolved') {
-            return <div className={css.Info__card}>
-            <img
-                src={this.state.pokemon.sprites.other['official-artwork'].front_default}
-                alt={this.state.pokemon.name}
-                width={300}
-                className={css.Info__pokemonImg}
-            />
-            <div><h3 className={css.Info_name}>{this.state.pokemon.name}</h3></div>
-            
-            
-        </div>
+            return <PokemonDataView pokemon={this.state.pokemon} />
         }
 
 
