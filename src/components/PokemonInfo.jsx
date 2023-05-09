@@ -54,7 +54,7 @@ export default class PokemonInfo extends Component {
         }
 
         if (this.state.status === 'pending') {
-            return <div className={css.Info__loadingBox}> <img src={pokemonLoading} alt="pokemon Loading" width={300} className={css.Info__loadingImg} /> <h2>Wait a second we search your pokemon...</h2></div>
+            return <div className={css.Info__loadingBox}> <img src={pokemonLoading} alt="pokemon Loading" width={500} className={css.Info__loadingImg} /> <h2 className={css.Info__pending}>Wait a second we search your pokemon...</h2></div>
         }
 
         if (this.state.status === 'rejected') {

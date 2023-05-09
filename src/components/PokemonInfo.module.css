@@ -13,7 +13,12 @@
 
 .Info__text{
     color: rgb(16, 119, 244);
-    font-size: 32px;
+    font-size: 44px;
+}
+
+.Info__pending{
+    color: black;
+    font-size: 44px;
 }
 
 .Info__card {
@@ -40,7 +45,7 @@
 
 .Info__error{
     color: rgb(204, 51, 61);
-    font-size: 32px;
+    font-size: 44px;
 }
 
 .Data__list{
