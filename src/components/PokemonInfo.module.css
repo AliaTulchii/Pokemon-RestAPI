@@ -17,8 +17,9 @@
 }
 
 .Info__pending{
-    color: black;
-    font-size: 44px;
+   
+    color: rgb(16, 119, 244);
+    font-size: 40px;
 }
 
 .Info__card {
@@ -71,4 +72,15 @@
 
 .Data__value{    
     color: rgb(16, 119, 244);
+}
+
+.Pending__box{
+    
+    display: flex;
+    align-items: center;
+}
+
+.Pending__spinner{
+    
+    margin:0;
 }
