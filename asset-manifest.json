@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Pokemon-RestAPI/static/css/main.5c4a691d.css",
-    "main.js": "/Pokemon-RestAPI/static/js/main.bbfdce6c.js",
-    "static/media/loading.png": "/Pokemon-RestAPI/static/media/loading.ffdf06d6c99e052ce471.png",
+    "main.css": "/Pokemon-RestAPI/static/css/main.fea67616.css",
+    "main.js": "/Pokemon-RestAPI/static/js/main.d46e7b71.js",
+    "static/media/loadingPokemon.png": "/Pokemon-RestAPI/static/media/loadingPokemon.ffdf06d6c99e052ce471.png",
     "static/media/pokemonLoading.png": "/Pokemon-RestAPI/static/media/pokemonLoading.752d6d31d1b3c09803f1.png",
     "static/media/pokemonTitle.svg": "/Pokemon-RestAPI/static/media/pokemonTitle.d461f6fc60285bfe6f43685f373dfa3c.svg",
     "static/media/pokeballsvg.svg": "/Pokemon-RestAPI/static/media/pokeballsvg.6130ac2be72d743dbd793557f12c9454.svg",
     "index.html": "/Pokemon-RestAPI/index.html",
-    "main.5c4a691d.css.map": "/Pokemon-RestAPI/static/css/main.5c4a691d.css.map",
-    "main.bbfdce6c.js.map": "/Pokemon-RestAPI/static/js/main.bbfdce6c.js.map"
+    "main.fea67616.css.map": "/Pokemon-RestAPI/static/css/main.fea67616.css.map",
+    "main.d46e7b71.js.map": "/Pokemon-RestAPI/static/js/main.d46e7b71.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c4a691d.css",
-    "static/js/main.bbfdce6c.js"
+    "static/css/main.fea67616.css",
+    "static/js/main.d46e7b71.js"
   ]
 }
